@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Skladiste</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
+	{% include "partials/head_funkcije.html" %}
+</head>
+<body onload="display_ct();">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/Main.css') }}" type="text/css">
+	<div id="container">
+		{% include "partials/navbar.html" %}
+		<main>
+			<section>
+         <form id="form1" name="DelStaff">
+           <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+           <div><p></p></div>
+           <div id="table-wrapper">
+             <div id="table-scroll">
+               <table>
+									<caption><b> Izbrisi osoblje </b></caption>
+                 <thead>
+                   <tr>
+										<th><span>ID osoblja</span></th>
+										<th><span>Ime</span></th>
+										<th><span>Prezime</span></th>
+										<th><span>Zaposlen od</span></th>
+										<th><span>Starost</span></th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   {% for row in staff_list %}
+                     <span class="trtbl">
+                     <tr>
+                       <td><a href="IzbrisiOsoblje.html/{{ row[0] }}">{{ row[0] }}</a></td>
+                       <td>{{ row[1] }}</td>
+                       <td>{{ row[2] }}</td>
+                       <td>{{ row[3] }}</td>
+					   					 <td>{{ row[4] }}</td>
+                     </tr>
+                     </span>
+                   {% endfor %}
+                   {% if exac_staff is not none %}
+                     {% for row in exac_staff %}
+                       <span class="trtbl">
+                       <tr>
+                         <td>{{ row[0] }}</td>
+                         <td>{{ row[1] }}</td>
+                         <td>{{ row[2] }}</td>
+                         <td>{{ row[3] }}</td>
+						 						 <td>{{ row[4] }}</td>
+                       </tr>
+                       </span>
+                     {% endfor %}
+                   {% endif %}
+                 </tbody>
+               </table>
+             </div>
+           </div>
+         {% if exac_staff != null  %}
+            <div id="paznja"><b> Da li ste sigurni da zelite da obrisete ovog clana osoblja? </b></div>
+            <div id="paznja"><b>Paznja: brisanjem ovog clana osoblja, sve narudzbine povezane sa njim bice obrisane.</b></div>
+            <input type="submit" value="Потврди" name="submit">
+            <input type="button" value="Откажи" name="cancel" onClick="location.href='/IzbrisiOsoblje.html'">
+		{% endif %}
+         </form>
+			</section>
+		</main>
+	</div>
+</body>
+</html>
