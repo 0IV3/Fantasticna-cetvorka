@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Skladiste</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
+	{% include "partials/head_funkcije.html" %}
+</head>
+<body onload="display_ct();">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/Main.css') }}" type="text/css">
+	<div id="container">
+		{% include "partials/navbar.html" %}
+		<main>
+			<section>
+          <form id="form1" name="EditOrderList">
+            <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+            <div><p></p></div>
+            <div id="table-wrapper">
+              <div id="table-scroll">
+                <table>
+                  <caption><b> Uredi porudzbinu </b></caption>
+                  <thead>
+                    <tr>
+                     <th><span>ID porudzbine</span></th>
+                     <th><span>Naziv proizvoda</span></th>
+                     <th><span>Ime kupca</span></th>
+                     <th><span>Ime osoblja</span></th>
+                     <th><span>Kolicina</span></th>
+                     <th><span>Cena</span></th>
+                     <th><span>Ukupna cena</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for row in Order_list %}
+                      <span class="trtbl">
+                      <tr>
+                       <td><a href="UrediPorudzbinu.html/{{ row[0] }}">{{ row[0] }}</a></td>
+                       <td>{{ row[1] }}</td>
+                       <td>{{ row[2] }}</td>
+                       <td>{{ row[3] }}</td>
+                       <td>{{ row[4] }}</td>
+                       <td>{{ row[5] }}</td>
+                       <td>{{ row[6] }}</td>
+                      </tr>
+                      </span>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+         {% if exac_Order != null  %}
+         <form id="form2" name="EditOrder" method="post">
+           {% for row in exac_Order %}
+           <div><b>Porudzbina ID: </b><input type="text" value="{{ row[0] }}" name="oid" id="oid" readonly title="This is a readonly field."></div>
+          <div>
+            <b>Proizvod: </b>
+            <select name="ProductSelect" id="ProductSelect" width="300px">
+              {% for o in product_list %}
+								{% if row[7] == o[0] %}
+                	<option value={{ o[0] }} selected="selected">{{ o[0]|string+" , "+o[1] }}</option>
+								{% else %}
+									<option value={{ o[0] }}>{{ o[0]|string+" , "+o[1] }}</option>
+								{% endif%}
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <b>Kupac: </b>
+            <select name="CustomerSelect" id="CustomerSelect" width="300px">
+              {% for o in customer_list  %}
+								{% if row[8] == o[0] %}
+                	<option value={{ o[0] }} selected >{{ o[0]|string+" , "+o[1]+" "+o[2] }}</option>
+								{% else %}
+									 <option value={{ o[0] }} >{{ o[0]|string+" , "+o[1]+" "+o[2] }}</option>
+								{% endif%}
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <b>Osoblje: </b>
+            <select name="StaffSelect" id="StaffSelect" width="300px">
+            	{% for o in staff_list %}
+								{% if row[9] == o[0] %}
+                 	<option value={{ o[0] }} selected>{{ o[0]|string+" , "+o[1]+" "+o[2] }}</option>
+								{% else %}
+									<option value={{ o[0] }}>{{ o[0]|string+" , "+o[1]+" "+o[2] }}</option>
+								{% endif%}
+               {% endfor %}
+            </select>
+          </div>
+          <div><b>Kolicina: </b><input type="text" value="{{ row[4] }}" name="ocount" id="ocount" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
+           <input type="submit" value="Submit" name="submit">
+           <input type="button" value="Cancel" name="cancel" onClick="location.href='/UrediPorudzbinu.html'">
+           {% endfor %}
+         </form>
+         {% endif %}
+			</section>
+		</main>
+	</div>
+</body>
+</html>
