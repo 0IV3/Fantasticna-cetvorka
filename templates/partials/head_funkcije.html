@@ -1,0 +1,24 @@
+<script type="text/javascript"> 
+	function display_c(){
+		let refresh=1000;
+		mytime=setTimeout(display_ct,refresh);
+	}
+
+	function display_ct() {
+		const x = new Date();
+
+        // Formatiranje datuma i vremena
+		const day = String(x.getDate()).padStart(2, '0');
+		const month = String(x.getMonth() + 1).padStart(2, '0'); // meseci od 0-11
+		const year = x.getFullYear();
+
+		const hours = String(x.getHours()).padStart(2, '0');
+		const minutes = String(x.getMinutes()).padStart(2, '0');
+		const seconds = String(x.getSeconds()).padStart(2, '0');
+
+		const formatted = `${day}.${month}.${year}. ${hours}:${minutes}:${seconds}`;
+
+		document.getElementById('ct').innerHTML = formatted;
+		display_c();
+	}
+</script>
