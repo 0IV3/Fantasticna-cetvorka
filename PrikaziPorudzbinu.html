@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Skladiste</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
+	{% include "partials/head_funkcije.html" %}
+</head>
+<body onload="display_ct();">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/Main.css') }}" type="text/css">
+	<div id="container">
+		{% include "partials/navbar.html" %}
+		<main>
+			<section>
+				<form id="form1" name="ShowOrder">
+				  <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+				  <div><p></p></div>
+           <div id="table-wrapper">
+             <div id="table-scroll">
+               <table>
+									<caption><b> Prikaz porudzbina </b></caption>
+                 <thead>
+                   <tr>
+						<th><span>ID porudzbine</span></th>
+						<th><span>Naziv proizvoda</span></th>
+						<th><span>Ime kupca</span></th>
+						<th><span>Ime osoblja</span></th>
+						<th><span>Kolicina</span></th>
+						<th><span>Cena</span></th>
+						<th><span>Ukupna cena</span></th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   {% for row in order_list %}
+                     <span class="trtbl">
+                     <tr>
+                       <td>{{ row[0] }}</td>
+                       <td>{{ row[1] }}</td>
+                       <td>{{ row[2] }}</td>
+                       <td>{{ row[3] }}</td>
+											 <td>{{ row[4] }}</td>
+											 <td>{{ row[5] }}</td>
+											 <td>{{ row[6] }}</td>
+                     </tr>
+                     </span>
+                   {% endfor %}
+                 </tbody>
+               </table>
+             </div>
+           </div>
+
+				</form>
+			</section>
+		</main>
+	</div>
+</body>
+</html>
