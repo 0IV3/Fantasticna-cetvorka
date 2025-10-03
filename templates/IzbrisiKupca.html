@@ -2,7 +2,7 @@
 <html>
     <head>
     <meta charset="utf-8">
-        <title>Skladiste</title>
+        <title>Складиште</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
         {% include "partials/head_funkcije.html" %}
     </head>
@@ -13,22 +13,22 @@
             <main>
                 <section>
                     <form id="form1" name="DelCustomer">
-                        <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct"></span></i></b>
+                        <div style="text-align: center;"><b><i>Датум и време: <span id="ct"></span></i></b>
 
                         </div>
                         <div><p></p></div>
                         <div id="table-wrapper">
                             <div id="table-scroll">
                                 <table>
-                                    <caption><b>Izbrisi kupca</b></caption>
+                                    <caption><b>Избриши купца</b></caption>
                                     <thead>
                                         <tr>
-                                            <th><span>ID kupca</span></th>
-                                            <th><span>Ime</span></th>
-                                            <th><span>Prezime</span></th>
-                                            <th><span>Adresa</span></th>
-                                            <th><span>Postanski broj</span></th>
-                                            <th><span>Starost</span></th>
+                                            <th><span>ID купца</span></th>
+                                            <th><span>Име</span></th>
+                                            <th><span>Презиме</span></th>
+                                            <th><span>Адреса</span></th>
+                                            <th><span>Поштански број</span></th>
+                                            <th><span>Старост</span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -64,8 +64,8 @@
                             </div>
                         </div>
                         {% if exac_customer != null %}
-                        <div id="paznja"><b>Da li ste sigurni da zelite da obrisete ovog kupca?</b></div>
-                        <div id="paznja"><b>Paznja: Brisanje ovog kupca, sva narudzbina povezana sa ovim kupcem bice obrisana.</b></div>
+                        <div id="paznja"><b> Да ли сте сигурни да желите да обришете овог купца?</b></div>
+                        <div id="paznja"><b> Пажња: брисањем овог купца, сва наруџбина повезана са овим купцем биће обрисана.</b></div>
                         <input type="submit" value="potvrdi" name="submit">
                         <input type="button" value="otkazi" name="cancel" onClick="location.href='/IzbrisiKupca.html'">
                         {% endif %}

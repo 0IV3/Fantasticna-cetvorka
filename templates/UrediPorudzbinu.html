@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,21 +13,21 @@
 		<main>
 			<section>
           <form id="form1" name="EditOrderList">
-            <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+            <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
             <div><p></p></div>
             <div id="table-wrapper">
               <div id="table-scroll">
                 <table>
-                  <caption><b> Uredi porudzbinu </b></caption>
+                  <caption><b> Уреди поруџбину </b></caption>
                   <thead>
                     <tr>
-                     <th><span>ID porudzbine</span></th>
-                     <th><span>Naziv proizvoda</span></th>
-                     <th><span>Ime kupca</span></th>
-                     <th><span>Ime osoblja</span></th>
-                     <th><span>Kolicina</span></th>
-                     <th><span>Cena</span></th>
-                     <th><span>Ukupna cena</span></th>
+                     <th><span>ID поруџбине</span></th>
+                     <th><span>Назив производа</span></th>
+                     <th><span>Име купца</span></th>
+                     <th><span>Име особља</span></th>
+                     <th><span>Количина</span></th>
+                     <th><span>Цена</span></th>
+                     <th><span>Укупна цена</span></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -52,9 +52,9 @@
          {% if exac_Order != null  %}
          <form id="form2" name="EditOrder" method="post">
            {% for row in exac_Order %}
-           <div><b>Porudzbina ID: </b><input type="text" value="{{ row[0] }}" name="oid" id="oid" readonly title="This is a readonly field."></div>
+           <div><b>Поруџбина ID: </b><input type="text" value="{{ row[0] }}" name="oid" id="oid" readonly title="This is a readonly field."></div>
           <div>
-            <b>Proizvod: </b>
+            <b>Производ: </b>
             <select name="ProductSelect" id="ProductSelect" width="300px">
               {% for o in product_list %}
 								{% if row[7] == o[0] %}
@@ -66,7 +66,7 @@
             </select>
           </div>
           <div>
-            <b>Kupac: </b>
+            <b>Купац: </b>
             <select name="CustomerSelect" id="CustomerSelect" width="300px">
               {% for o in customer_list  %}
 								{% if row[8] == o[0] %}
@@ -78,7 +78,7 @@
             </select>
           </div>
           <div>
-            <b>Osoblje: </b>
+            <b>Особље: </b>
             <select name="StaffSelect" id="StaffSelect" width="300px">
             	{% for o in staff_list %}
 								{% if row[9] == o[0] %}
@@ -89,7 +89,7 @@
                {% endfor %}
             </select>
           </div>
-          <div><b>Kolicina: </b><input type="text" value="{{ row[4] }}" name="ocount" id="ocount" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
+          <div><b>Количина: </b><input type="text" value="{{ row[4] }}" name="ocount" id="ocount" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
            <input type="submit" value="Submit" name="submit">
            <input type="button" value="Cancel" name="cancel" onClick="location.href='/UrediPorudzbinu.html'">
            {% endfor %}

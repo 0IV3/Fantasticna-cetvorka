@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,19 +13,19 @@
 		<main>
 			<section>
           <form id="form1" name="EditStaffList">
-            <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+            <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
             <div><p></p></div>
             <div id="table-wrapper">
               <div id="table-scroll">
                 <table>
-                  <caption><b> Uredi osoblje </b></caption>
+                  <caption><b> Уреди особље </b></caption>
                   <thead>
                     <tr>
-                     <th><span>ID osoblja</span></th>
-                     <th><span>Ime</span></th>
-                     <th><span>Prezime</span></th>
-                     <th><span>Zaposlen od</span></th>
-                     <th><span>Starost</span></th>
+                     <th><span>ID особља</span></th>
+                     <th><span>Име</span></th>
+                     <th><span>Презиме</span></th>
+                     <th><span>Запослен од</span></th>
+                     <th><span>Старост</span></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -48,11 +48,11 @@
          {% if exac_Staff != null  %}
          <form id="form2" name="EditStaff" method="post">
            {% for row in exac_Staff %}
-           <div><b>Osoblje ID: </b><input type="text" value="{{ row[0] }}" name="sid" id="sid" readonly title="This is a readonly field."></div>
-          <div><b>Ime: </b><input type="text" value="{{ row[1] }}" name="fname" id="fname" maxlength="45"></div>
-          <div><b>Prezime: </b><input type="text" value="{{ row[2] }}" name="lname" id="lname" maxlength="45"></div>
-          <div><b>Zaposlen od: </b><input type="date"  value="{{ row[3] }}" name="semployeesince" id="semployeesince"></div>
-          <div><b>Starost: </b><input type="number" name="sage" id="sage" value="{{ row[4] }}" min=10 max=120></div>
+           <div><b>Особље ID: </b><input type="text" value="{{ row[0] }}" name="sid" id="sid" readonly title="This is a readonly field."></div>
+          <div><b>Име: </b><input type="text" value="{{ row[1] }}" name="fname" id="fname" maxlength="45"></div>
+          <div><b>Презиме: </b><input type="text" value="{{ row[2] }}" name="lname" id="lname" maxlength="45"></div>
+          <div><b>Запослен од: </b><input type="date"  value="{{ row[3] }}" name="semployeesince" id="semployeesince"></div>
+          <div><b>Старост: </b><input type="number" name="sage" id="sage" value="{{ row[4] }}" min=10 max=120></div>
            <input type="submit" value="Submit" name="submit">
            <input type="button" value="Cancel" name="cancel" onClick="location.href='/UrediOsoblje.html'">
            {% endfor %}

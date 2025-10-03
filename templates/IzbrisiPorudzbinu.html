@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,21 +13,21 @@
 		<main>
 			<section>
          <form id="form1" name="DelOrder">
-           <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+           <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
            <div><p></p></div>
            <div id="table-wrapper">
              <div id="table-scroll">
                <table>
-									<caption><b> Izbrisi porudzbinu </b></caption>
+									<caption><b> Избриши поруџбину </b></caption>
                  <thead>
                    <tr>
-										<th><span>ID porudzbine</span></th>
-										<th><span>Naziv proizvoda</span></th>
-										<th><span>Ime kupca</span></th>
-										<th><span>Ime osoblja</span></th>
-										<th><span>Kolicina</span></th>
-										<th><span>Cena</span></th>
-										<th><span>Ukupna cena</span></th>
+										<th><span>ID поруџбине</span></th>
+										<th><span>Назив производа</span></th>
+										<th><span>Име купца</span></th>
+										<th><span>Име особља</span></th>
+										<th><span>Количина</span></th>
+										<th><span>Цена</span></th>
+										<th><span>Укупна цена</span></th>
                    </tr>
                  </thead>
                  <tbody>
@@ -64,7 +64,7 @@
              </div>
            </div>
          {% if exac_order != null  %}
-            <div id="paznja"><b> Da li ste sigurni da zelite da obrisete ovu porudzbinu? </b></div>
+            <div id="paznja"><b> Да ли сте сигурни да желите да обришете ову поруџбину? </b></div>
             <input type="submit" value="Потврди" name="submit">
             <input type="button" value="Откажи" name="cancel" onClick="location.href='/IzbrisiPorudzbinu.html'">
 		{% endif %}

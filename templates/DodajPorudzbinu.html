@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,13 +13,13 @@
 		<main>
 			<section>
 				<form id="form2" name="AddProduct" method="post">
-				  <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+				  <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
 				  <div><p></p></div>
 					<table width=100%>
-						<caption><b> Dodaj porudzbinu </b></caption>
+						<caption><b> Додај поруџбину </b></caption>
 					</table>
 				  <div>
-					  <b>Proizvod: </b>
+					  <b>Производ: </b>
 					  <select name="ProductSelect" id="ProductSelect" width="300px">
 							{% for o in product_list %}
 						  	<option value={{ o[0] }}>{{ o[0]|string+" , "+o[1] }}</option>
@@ -27,7 +27,7 @@
 					  </select>
 				  </div>
 				  <div>
-					  <b>Kupac: </b>
+					  <b>Купац: </b>
 					  <select name="CustomerSelect" id="CustomerSelect" width="300px">
 							{% for o in customer_list  %}
 								<option value={{ o[0] }}>{{ o[0]|string+" , "+o[1]+" "+o[2] }}</option>
@@ -35,14 +35,14 @@
 					  </select>
 				  </div>
 				  <div>
-					  <b>Osoblje: </b>
+					  <b>Особље: </b>
 					  <select name="StaffSelect" id="StaffSelect" width="300px">
                {% for o in staff_list %}
                  <option value={{ o[0] }}>{{ o[0]|string+" , "+o[1]+" "+o[2] }}</option>
                {% endfor %}
 					  </select>
 				  </div>
-				  <div><b>Kolicina: </b><input type="text" value="" name="pamount" id="pamount" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
+				  <div><b>Количина: </b><input type="text" value="" name="pamount" id="pamount" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
 				  <input type="reset" value="Ресетуј образац" name="reset">
 				  <input type="submit" value="Пошаљи" name="submit">
 				  <input type="button" value="Одустани" name="cancel" onClick="location.href='/Main.html'">

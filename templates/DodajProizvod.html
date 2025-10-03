@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,14 +13,14 @@
 		<main>
 			<section>
 				<form id="form2" name="AddProduct" method="post">
-				  <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+				  <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
 				  <div><p></p></div>
 					<table width=100%>
-						<caption><b> Dodaj proizvod </b></caption>
+						<caption><b> Додај производ </b></caption>
 					</table>
-				  <div><b>Naziv: </b><input type="text" value="" name="pname" id="pname" maxlength="20"></div>
-				  <div><b>Cena: </b><input type="text" value="" name="pprice" id="pprice" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"></div>
-				  <div><b>Kolicina: </b><input type="text" value="" name="pamount" id ="pamount" min=0 max=65536 onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
+				  <div><b>Назив: </b><input type="text" value="" name="pname" id="pname" maxlength="20"></div>
+				  <div><b>Цена: </b><input type="text" value="" name="pprice" id="pprice" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"></div>
+				  <div><b>Количина: </b><input type="text" value="" name="pamount" id ="pamount" min=0 max=65536 onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
 				  <input type="reset" value="Ресетуј образац" name="reset">
 				  <input type="submit" value="Пошаљи" name="submit">
 				  <input type="button" value="Одустани" name="cancel" onClick="location.href='/Main.html'">

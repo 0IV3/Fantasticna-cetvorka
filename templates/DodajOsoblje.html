@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,15 +13,15 @@
 		<main>
 			<section>
 				<form id="form2" name="AddProduct" method="post">
-				  <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+				  <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
 				  <div><p></p></div>
 					<table width=100%>
-						<caption><b> Dodaj osoblje </b></caption>
+						<caption><b> Додај особље </b></caption>
 					</table>
-				  <div><b>Ime: </b><input type="text" value="" name="fname" id="fname" maxlength="45"></div>
-				  <div><b>Prezime: </b><input type="text" value="" name="lname" id="lname" maxlength="45"></div>
-				  <div><b>Zaposlen od: </b><input type="date" name="semployeesince" id="semployeesince"></div>
-				  <div><b>Starost: </b><input type="number" name="sage" id="sage" min=10 max=110></div>
+				  <div><b>Име: </b><input type="text" value="" name="fname" id="fname" maxlength="45"></div>
+				  <div><b>Презиме: </b><input type="text" value="" name="lname" id="lname" maxlength="45"></div>
+				  <div><b>Запослен од: </b><input type="date" name="semployeesince" id="semployeesince"></div>
+				  <div><b>Старост: </b><input type="number" name="sage" id="sage" min=10 max=110></div>
 				  <input type="reset" value="Ресетуј образац" name="reset">
 				  <input type="submit" value="Пошаљи" name="submit">
 				  <input type="button" value="Одустани" name="cancel" onClick="location.href='/Main.html'">

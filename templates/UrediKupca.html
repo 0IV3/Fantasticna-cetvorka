@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,20 +13,20 @@
 		<main>
 			<section>
           <form id="form1" name="EditCustomerList">
-            <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+            <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
             <div><p></p></div>
             <div id="table-wrapper">
               <div id="table-scroll">
                 <table>
-                  <caption><b> Uredi kupce </b></caption>
+                  <caption><b> Уреди купце </b></caption>
                   <thead>
                     <tr>
-                     <th><span>ID Kupca</span></th>
-                     <th><span>Ime</span></th>
-                     <th><span>Prezime</span></th>
-                     <th><span>Adresa</span></th>
-                     <th><span>Postanski broj</span></th>
-                     <th><span>Starost</span></th>
+                     <th><span>ID купца</span></th>
+                     <th><span>Име</span></th>
+                     <th><span>Презиме</span></th>
+                     <th><span>Адреса</span></th>
+                     <th><span>Поштански број</span></th>
+                     <th><span>Старост</span></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -50,12 +50,12 @@
          {% if exac_Customer != null  %}
          <form id="form2" name="EditCustomer" method="post">
            {% for row in exac_Customer %}
-           <div><b>ID kupca: </b><input type="text" value="{{ row[0] }}" name="cid" id="cid" readonly title="This is a readonly field."></div>
-          <div><b>Ime: </b><input type="text" value="{{ row[1] }}" name="fname" id="fname" maxlength="45"></div>
-          <div><b>Prezime: </b><input type="text" value="{{ row[2] }}" name="lname" id="lname" maxlength="45"></div>
-          <div><b>Ulica: </b><input type="text" value="{{ row[3] }}" name="cstreet" id="cstreet" maxlength="150"></div>
-          <div><b>Postanski broj: </b><input type="text" value="{{ row[4] }}" name="cpostcode" id="cpostcode" maxlength="10" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
-          <div><b>Starost: </b><input type="number" name="cage" id="cage" value="{{ row[5] }}" min=10 max=120></div>
+           <div><b>ID купца: </b><input type="text" value="{{ row[0] }}" name="cid" id="cid" readonly title="This is a readonly field."></div>
+          <div><b>Име: </b><input type="text" value="{{ row[1] }}" name="fname" id="fname" maxlength="45"></div>
+          <div><b>Презиме: </b><input type="text" value="{{ row[2] }}" name="lname" id="lname" maxlength="45"></div>
+          <div><b>Улица: </b><input type="text" value="{{ row[3] }}" name="cstreet" id="cstreet" maxlength="150"></div>
+          <div><b>Поштански број: </b><input type="text" value="{{ row[4] }}" name="cpostcode" id="cpostcode" maxlength="10" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></div>
+          <div><b>Старост: </b><input type="number" name="cage" id="cage" value="{{ row[5] }}" min=10 max=120></div>
            <input type="submit" value="Submit" name="submit">
            <input type="button" value="Cancel" name="cancel" onClick="location.href='/UrediKupca.html'">
            {% endfor %}

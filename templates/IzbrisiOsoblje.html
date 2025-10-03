@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Skladiste</title>
+	<title>Складиште</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/Main.css') }}" type="text/css">
 	{% include "partials/head_funkcije.html" %}
 </head>
@@ -13,19 +13,19 @@
 		<main>
 			<section>
          <form id="form1" name="DelStaff">
-           <div style="text-align: center;"><b><i>Datum i vreme: <span id="ct" ></span></i></b></div>
+           <div style="text-align: center;"><b><i>Датум и време: <span id="ct" ></span></i></b></div>
            <div><p></p></div>
            <div id="table-wrapper">
              <div id="table-scroll">
                <table>
-									<caption><b> Izbrisi osoblje </b></caption>
+									<caption><b> Избриши особље </b></caption>
                  <thead>
                    <tr>
-										<th><span>ID osoblja</span></th>
-										<th><span>Ime</span></th>
-										<th><span>Prezime</span></th>
-										<th><span>Zaposlen od</span></th>
-										<th><span>Starost</span></th>
+										<th><span>ID особља</span></th>
+										<th><span>Име</span></th>
+										<th><span>Презиме</span></th>
+										<th><span>Запослен од</span></th>
+										<th><span>Старост</span></th>
                    </tr>
                  </thead>
                  <tbody>
@@ -58,8 +58,8 @@
              </div>
            </div>
          {% if exac_staff != null  %}
-            <div id="paznja"><b> Da li ste sigurni da zelite da obrisete ovog clana osoblja? </b></div>
-            <div id="paznja"><b>Paznja: brisanjem ovog clana osoblja, sve narudzbine povezane sa njim bice obrisane.</b></div>
+            <div id="paznja"><b> Да ли сте сигурни да желите да обришете овог члана особља? </b></div>
+            <div id="paznja"><b> Пажња: брисањем овог члана особља, све наруџбине повезане са њим биће обрисане.</b></div>
             <input type="submit" value="Потврди" name="submit">
             <input type="button" value="Откажи" name="cancel" onClick="location.href='/IzbrisiOsoblje.html'">
 		{% endif %}
